@@ -19,4 +19,24 @@ class Node:
         else:
           self.right.insert(data)
 
-root = Node(30)       
+def inorder(root):
+  if root is None:
+    return
+  inorder(root.left)
+  print(root.data, end=" ")
+  inorder(root.right)
+
+if __name__ == '__main__':
+  root = Node('g')
+  root.insert('c')
+  root.insert('b')
+  root.insert('a')
+  root.insert('e')
+  root.insert('d')
+  root.insert('f')
+  root.insert('i')
+  root.insert('h')
+  root.insert('j')
+  root.insert('k')
+
+inorder(root)
